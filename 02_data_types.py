@@ -86,9 +86,9 @@ print(res_line)
 # two = float(two)
 # print(one+two)
 # +=, -=, *=, /=, %=, **=, //=
-one = 5
-print(one)
-one += 1  # one = one + 1
+# one = 5
+# print(one)
+# one += 1  # one = one + 1
 
 # one = 3
 # two = 3
@@ -96,4 +96,14 @@ one += 1  # one = one + 1
 
 # one = 5
 # two = 7
-one, two = 5, 7
+# one, two = 5, 7
+
+
+# numb = 200
+# pers = 5
+
+# res = numb / 100 * 5
+# res = numb * 0.1
+
+
+
