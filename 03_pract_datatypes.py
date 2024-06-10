@@ -22,23 +22,84 @@
 # Наприклад, якщо користувач ввів 11 грн 150 коп, програма має вивести на екран суму 12
 # грн 50 .
 
-uah = int(input("Enter value uah :: ")) #11
-pennies = int(input("Enter value pennies :: "))#150
-uah += pennies // 100 
-pennies %= 100
-print("{} грн {} коп.".format(uah,pennies))
+# uah = int(input("Enter value uah :: ")) #11
+# pennies = int(input("Enter value pennies :: "))#150
+# uah += pennies // 100
+# pennies %= 100
+# print("{} грн {} коп.".format(uah,pennies))
 
 
-# task 6
-print(chr(9556) + chr(9552)*50 + chr(9559))
-print()
-print(chr(9553) + ' '*15 + 'Pory Roku' + ' ' * 26 + chr(9553))
-print()
-print(chr(9568) + chr(9552)*11 + chr(9574) + chr(9552)*14 +
-      chr(9574) + chr(9552)*11 + chr(9574) + chr(9552)*11 + chr(9571))
-print()
-print(chr(9553) + ' '*3 + 'Zyma' + ' '*4 + chr(9553) + ' '*4 + "Vesna" + ' ' * 5 +
-      chr(9553) + ' '*3 + 'Lito' + ' '*4 + chr(9553) + ' '*3 + 'Osin' + ' '*4 + chr(9553))
-print()
-print(chr(9562) + chr(9552)*11 + chr(9577) + chr(9552)*14 +
-      chr(9577) + chr(9552)*11 + chr(9577) + chr(9552)*11 + chr(9565))
+# # task 6
+# print(chr(9556) + chr(9552)*50 + chr(9559))
+# print()
+# print(chr(9553) + ' '*15 + 'Pory Roku' + ' ' * 26 + chr(9553))
+# print()
+# print(chr(9568) + chr(9552)*11 + chr(9574) + chr(9552)*14 +
+#       chr(9574) + chr(9552)*11 + chr(9574) + chr(9552)*11 + chr(9571))
+# print()
+# print(chr(9553) + ' '*3 + 'Zyma' + ' '*4 + chr(9553) + ' '*4 + "Vesna" + ' ' * 5 +
+#       chr(9553) + ' '*3 + 'Lito' + ' '*4 + chr(9553) + ' '*3 + 'Osin' + ' '*4 + chr(9553))
+# print()
+# print(chr(9562) + chr(9552)*11 + chr(9577) + chr(9552)*14 +
+#       chr(9577) + chr(9552)*11 + chr(9577) + chr(9552)*11 + chr(9565))
+
+
+# Користувач вводить з клавіатури час у секундах, що минув з початку дня. Вивести на
+# екран поточний час у годинах, хвилинах і секундах. Порахувати, скільки годин, хвилин і
+# секунд залишилося до півночі.
+
+# second = int(input("Enter seconds :: "))
+# end_second = 24 * 3600
+# res = end_second - second
+
+# start_h = second // 3600
+# start_m = (second % 3600) // 60
+# start_s = second % 60
+
+
+# end_h = res // 3600
+# end_m = (res % 3600) // 60
+# end_s = res % 60
+
+# print('Start :: {}:{}:{}; End :: {}:{}:{}'.format(start_h,start_m,start_s,end_h,end_m,end_s))
+
+# Завдання 4
+# Написати програму, яка перетворює введене з клавіатури дробове число на грошовий
+# формат. Наприклад, число 12,5 має бути перетворено так: 12 грн 50 коп.
+
+# number = float(input("Enter value :: "))
+# uah = int(number)
+# coin = int(number * 100 % 100) #1250
+
+# print('{} грн {} коп'.format(uah,coin))
+
+
+# Завдання 2
+# Написати програму обчислення відстані між населеними пунктами. Нижче наведено
+# рекомендований вигляд:
+# Обчислення відстані між населеними пунктами.
+# Введіть вихідні дані:
+# Масштаб карти (кількість кілометрів в одному сантиметрі) -> 120
+# Відстань між точками, які зображують населені пункти (см) -> 3.5
+# Відстань між населеними пунктами 420 км.
+
+# scale = int(input("Масштаб карти (кількість кілометрів в одному сантиметрі) -> "))
+# distance = float(input("Відстань між точками, які зображують населені пункти (см) -> "))
+# print('Відстань між населеними пунктами {} км.'.format(scale * distance))
+# Користувач вводить з клавіатури час початку і час завершення використання скутера
+# (години, хвилини та секунди). Порахувати вартість подорожі, якщо вартість хвилини —
+# 2 гривні.
+start_h = int(input("Enter start  h :: "))
+start_m = int(input("Enter start  m :: "))
+start_s = int(input("Enter start  s :: "))
+
+end_h = int(input("Enter end  h :: "))
+end_m = int(input("Enter end  m :: "))
+end_s = int(input("Enter end  s :: "))
+
+start_time = start_h * 3600 + start_m * 60 + start_s
+end_time = end_h * 3600 + end_m * 60 + end_s
+
+res = (end_time - start_time) / 60 * 2
+
+print("Result :: {}".format(res))
