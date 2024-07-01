@@ -54,34 +54,45 @@ import random
 #     # rnd = random.choice('rsp')  випадковий вибір символа
 #     print(rnd)
 #     input()
+us = bt = d = 0
+while True:
+    user_score = 0
+    bot_score = 0
+    for i in range(3):
+        while True:
+            user = input('''
+            [r] - rock
+            [p] - paper
+            [s] - scissors
+                Enter your choose :: ''').lower()
+            if user == 's' or user == 'p' or user == 'r':
+                break
+            else:
+                print('Error. Enter true choose')
+        bot = random.choice('rps')
+        print('\t\t Bot \t User')
+        print(f'\t\t [{bot}] \t  [{user}]')
+        if user == 'p' and bot == 'r' or user == 'r' and bot =='s' or user == 's' and bot == 'p':
+            user_score+=1
+        elif bot == 'p' and user == 'r' or bot == 'r' and user =='s' or bot == 's' and user == 'p':
+            bot_score+=1
 
-user_score = 0
-bot_score = 0
-for i in range(3):
-    while True:
-        user = input('''
-        [r] - rock
-        [p] - paper
-        [s] - scissors
-            Enter your choose :: ''').lower()
-        if user == 's' or user == 'p' or user == 'r':
-            break
-        else:
-            print('Error. Enter true choose')
-    bot = random.choice('rps')
-    print('\t\t Bot \t User')
-    print(f'\t\t [{bot}] \t  [{user}]')
-    if user == 'p' and bot == 'r' or user == 'r' and bot =='s' or user == 's' and bot == 'p':
-        user_score+=1
-    elif bot == 'p' and user == 'r' or bot == 'r' and user =='s' or bot == 's' and user == 'p':
-        bot_score+=1
-
-if user_score > bot_score:
-    print('='*15 + ' Congratulation !!! ' + '='*15)
-elif bot_score > user_score:
-    print('='*15 + ' Sorry!! You Loser !!! ' + '='*15)
-else:
-    print('='*15 + ' Draw ' + '='*15)
-
-
+    if user_score > bot_score:
+        print('='*15 + ' Congratulation !!! ' + '='*15)
+        us+=1
+    elif bot_score > user_score:
+        print('='*15 + ' Sorry!! You Loser !!! ' + '='*15)
+        bt+=1
+    else:
+        print('='*15 + ' Draw ' + '='*15)
+        d+=1
     
+    exit = input('[y] - yes; [n] - no --> ')
+    if exit == 'n':
+        break
+print(f'user - {us} bot - {bt}  draw - {d}')
+
+
+
+# 163256
+# 125
