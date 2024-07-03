@@ -47,14 +47,14 @@ word = 'Length'
 # print('sit' in line)
 # print('lorem' not in  line)
 
-
+import re
 #------------------------------------------------------
-# numbers = '12345874'
-# letters = 'jghujdmffbvg'
-# line = 'Lorem ipsum emet dolor'
-# word = 'Fruit Apple'
-# word_2 = "BANANA"
-# letterDig = 'hfgt3546jfhfy'
+numbers = '12345874'
+letters = 'jghujdmffbvg'
+line = 'Lorem ipsum emet dolor'
+word = 'Fruit Apple'
+word_2 = "BANANA"
+letterDig = 'hfgt3546jfhfy'
 
 # # лише букви або цифри
 # print('\n\n================== isalnum() =================')
@@ -84,7 +84,7 @@ word = 'Length'
 # print('\t', letterDig, '\t--- >\t', letterDig.isdigit())
 # print('==================================================')
 
-# # letters = '           '
+# letters = '           '
 # print('\n\n================== isspace() =================')  # лише пропуск
 # print('\t', numbers, '\t--- >\t', numbers.isspace())
 # print('\t', letters, '\t--- >\t', letters.isspace())
@@ -219,7 +219,7 @@ word = 'Length'
 # print('\t ', line, ' --- >\t', line.index('ipsum'))
 # print('\t ', line, ' --- >\t', line.index('ipsum', 7))
 # print('\t ', line, ' --- >\t', line.index('ipsum', 24))
-# # print('\t ', line, ' --- >\t', line.index('ipsum', 42))
+# print('\t ', line, ' --- >\t', line.index('ipsum', 42))
 
 # print('\n\n============================================\n')
 
@@ -239,13 +239,13 @@ word = 'Length'
 
 
 # print('\n\n================== replace() =================\n')
-# print('\t ', line, ' --- >\t', line.replace('ipsum', 'yellow'))
+# print('\t ', line, ' --- >\t', line.replace('ipsum', 'yellow',2))
 # print('\n\n============================================\n')
 
 
-# str_1 = '123'
-# str_2 = '234'
-# str_3 = 'Lorem** 21 ipsum red'
+str_1 = '123'
+str_2 = '234'
+str_3 = 'Lorem** 21 ipsum red'
 
 
 # print('\n\n================== re.search("template",str)  =================\n')
@@ -283,8 +283,8 @@ word = 'Length'
 # else:
 #     print('not found letter')
 
-# match = re.search('[a-zA-Z]', str_3)
-# print('\t ', str_3, '\t\t\t --- >\t', re.search('[a-zA-Z]', str_3))
+# match = re.search('[a-z]', str_3)
+# print('\t ', str_3, '\t\t\t --- >\t', re.search('[a-z]', str_3))
 
 # if match:
 #     print("Find by letter")
@@ -350,3 +350,33 @@ word = 'Length'
 # print('Digits :: ',dig)    
 # print(line.count('r'))
 # print(line.replace('r','qqqqq'))
+
+# line = 'apple plum orange banana'
+# print(line.split(' ')[0])
+
+import string
+import random
+print('Lorem'.center(50))
+print('Lorem'.center(50,'*'))
+print('\tLorem\t'.expandtabs(10))
+print('Lorem'.rjust(30,'*'))
+print('Lorem'.ljust(30,'*'))
+print('Lomrem'.lstrip('Lo'))
+print('Lomrem'.rstrip('m'))
+print('Lomrmem'.strip('m'))
+print('L124'.zfill(10))
+
+print("ttest {0:3.2f}".format(2.36589))
+print("ttest {0:4d}".format(20))
+print("ttest {0:^10}".format(20))
+print("ttest {0:>10}".format(20))
+print("ttest {0:<10}!!!".format(20))
+
+print(string.ascii_letters)
+print(string.digits)
+print(string.punctuation)
+
+userLogin = ''.join(random.sample((string.ascii_lowercase),6))
+userPass = ''.join(random.sample((string.ascii_letters+string.digits+string.punctuation),8))
+print(userLogin)
+print(userPass)
