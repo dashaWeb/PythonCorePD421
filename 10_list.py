@@ -144,3 +144,12 @@ print(max(number))
 print(sum(number))
 print(sorted(number))
 print(sorted(number,reverse=True))
+
+# number = []
+# for i in range(10):
+#     number.append(int(input('Enter mark --> ')))
+
+
+mark = [int(i) for i in input('Enter mark --> ').split(' ')]
+print(mark)
+print(' '.join(str(i) for i in mark))
