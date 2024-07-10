@@ -35,10 +35,10 @@ matrix = [[random.randint(1,20) for j in range(col)] for i in range(row)] # [0,2
 # ]
 # print(matrix[1][0])
 # print matrix
-for row in matrix:
-    for num in row:
-        print(num,end='\t')
-    print()
+# for row in matrix:
+#     for num in row:
+#         print(num,end='\t')
+#     print()
 
 # sum_ = 0
 # # for i in range(3): 
@@ -80,28 +80,45 @@ for row in matrix:
 # print(f"Max :: {max(max_)}")
 # print(f"Min :: {min(min_)}")
 
-min_ = min([min(row) for row in matrix])
-max_ = max([max(row) for row in matrix])
-print(f"Max :: {max_}")
-print(f"Min :: {min_}")
+# min_ = min([min(row) for row in matrix])
+# max_ = max([max(row) for row in matrix])
+# print(f"Max :: {max_}")
+# print(f"Min :: {min_}")
 
 
-copy_matrix = []
+# copy_matrix = []
 
-for row in matrix:
-    copy_matrix.append(row.copy())
+# for row in matrix:
+#     copy_matrix.append(row.copy())
 
-print(id(matrix),matrix,sep='\n')
-print()
-print(id(copy_matrix),copy_matrix,sep='\n')
+# print(id(matrix),matrix,sep='\n')
+# print()
+# print(id(copy_matrix),copy_matrix,sep='\n')
 
-print()
-copy_matrix[0][0] = 33
-print(id(matrix),matrix,sep='\n')
-print()
-print(id(copy_matrix),copy_matrix,sep='\n')
+# print()
+# copy_matrix[0][0] = 33
+# print(id(matrix),matrix,sep='\n')
+# print()
+# print(id(copy_matrix),copy_matrix,sep='\n')
 
-for i in range(3):
-    print(f'copy :: {id(matrix[i])}; origin :: {id(copy_matrix[i])}')
+# for i in range(3):
+#     print(f'copy :: {id(matrix[i])}; origin :: {id(copy_matrix[i])}')
+row, col = 3,5
+matr = [[random.randint(1,10) for i in range(col)] for j in range(row)]
+total_sum = 0
+for line in matr:
+    sum_row = 0
+    total_sum+=sum(line)
+    for item in line:
+        print(f'{item}', end='\t')
+        sum_row+=item
+    print(f'| {sum_row}')
 
-    
+print('-'*(col*9))
+
+for i in range(col):
+    sum_col = 0
+    for j in range(row):
+        sum_col+= matr[j][i]
+    print(f'{sum_col}',end='\t')
+print(f'| {total_sum}')
