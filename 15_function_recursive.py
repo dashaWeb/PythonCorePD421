@@ -42,3 +42,16 @@ def powRec(numb, pow):
 
 
 print(powRec(2, 4))
+
+
+# def star(n):
+#     if n == 0:
+#         return None
+#     print('*',end='')
+#     star(n-1)
+
+def star(n):
+    if n > 0:
+        print('*',end='')
+        star(n-1)
+star(5)
