@@ -14,11 +14,14 @@
 #     file.write(json_serial)
 
 
-# students = [
-#     {'name':'Pasha' , 'age':16},
-#     {'name':'Olia' , 'age':15},
-#     {'name':'Oleg' , 'age':17},
-# ]
+students = [
+    {'name':'Pasha' , 'age':16},
+    {'name':'Olia' , 'age':15},
+    {'name':'Oleg' , 'age':17},
+]
+
+students = sorted(students, key = lambda x :x['name'])
+print(students)
 # print(type(students), students)
 # students_string = json.dumps(students)
 
@@ -55,26 +58,26 @@
 
 
 # -------------------------------------------------------
-import requests
-import json
-# result = requests.get('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5').json()
-# # result = json.loads(result.content)
+# import requests
+# import json
+# # result = requests.get('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5').json()
+# # # result = json.loads(result.content)
 
-# print(result, type(result))
-# print(result[0]['sale'])
+# # print(result, type(result))
+# # print(result[0]['sale'])
 
 
-# img = requests.get('https://cdn.creatureandcoagency.com/uploads/2021/03/nature-3238564.png').content
-# with open('20_file_obj/spring.png','wb') as file:
-#     file.write(img)
+# # img = requests.get('https://cdn.creatureandcoagency.com/uploads/2021/03/nature-3238564.png').content
+# # with open('20_file_obj/spring.png','wb') as file:
+# #     file.write(img)
 
-url = 'https://pixabay.com/api/?key=14304821-db198647e0592cf253911c94a&q=yellow+animals&image_type=photo&pretty=true&per_page=50'
-images = requests.get(url).json()
-images = images['hits']
-counter = 1
+# url = 'https://pixabay.com/api/?key=14304821-db198647e0592cf253911c94a&q=yellow+animals&image_type=photo&pretty=true&per_page=50'
+# images = requests.get(url).json()
+# images = images['hits']
+# counter = 1
 
-for img in images:
-    picture = requests.get(img['webformatURL']).content
-    with open(f'20_file_obj/{counter}.jpg', 'wb') as file:
-        file.write(picture)
-    counter+=1
+# for img in images:
+#     picture = requests.get(img['webformatURL']).content
+#     with open(f'20_file_obj/{counter}.jpg', 'wb') as file:
+#         file.write(picture)
+#     counter+=1
