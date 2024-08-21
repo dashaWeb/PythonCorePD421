@@ -53,6 +53,8 @@ print('-'*50)
 
 
 def numb(x):
+    if x < 0:
+        return x
     return x * -1
 
 print('Map')

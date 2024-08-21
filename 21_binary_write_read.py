@@ -63,3 +63,66 @@ users = [{
     "birthday": "26.06.2022"
 }
 ]
+
+def printUsers(users):
+    for user in users:
+        print(user)
+
+printUsers(users)
+filter_users = list(filter(lambda x: int(x['birthday'].split('.')[0]) > 15, users))
+print()
+printUsers(filter_users)
+
+sorted_users = sorted(users,key=lambda x:x['first_name'])
+print()
+printUsers(sorted_users)
+
+def filter_map(user):
+    if int(user['birthday'].split('.')[0]) > 15:
+        user['email']+='*'
+        return user
+    return user
+
+map_users = list(map(filter_map,users))
+print()
+printUsers(map_users)
+
+# import pickle
+
+# with open(f'{directory}/{filename_t}','w') as file:
+#     file.write(text)
+
+# with open(f'{directory}/{filename_b}','wb') as file:
+#     pickle.dump(text,file)
+#     print(pickle.dumps(text))
+
+
+# with open(f'{directory}/{filename_t}','w') as file:
+#     file.write(str(list_))
+
+# with open(f'{directory}/{filename_b}','wb') as file:
+#     pickle.dump(list_,file)
+#     # print(pickle.dumps(text))
+
+
+# with open(f'{directory}/{filename_t}','w') as file:
+#     file.write(str(dict_))
+
+# with open(f'{directory}/{filename_b}','wb') as file:
+#     pickle.dump(dict_,file)
+#     # print(pickle.dumps(text))
+
+
+# with open(f'{directory}/{filename_t}','w') as file:
+#     file.write(str(users))
+
+# with open(f'{directory}/{filename_b}','wb') as file:
+#     pickle.dump(users,file)
+    # print(pickle.dumps(text))
+
+# with open(f'{directory}/{filename_b}','rb') as file:
+#     res_users = pickle.load(file)
+#     print(type(res_users))
+#     for user in res_users:
+#         print(user,type(user))
+
